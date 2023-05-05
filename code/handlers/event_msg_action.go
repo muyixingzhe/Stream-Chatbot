@@ -37,7 +37,7 @@ func (m *MessageAction) Execute(a *ActionInfo) bool {
 	go func() {
 		defer func() {
 			if err := recover(); err != nil {
-				err := updateFinalCard(*a.ctx, "聊天失败", cardId)
+				err := updateFinalCard(*a.ctx, "聊天失败o(╥﹏╥)o", cardId)
 				if err != nil {
 					return
 				}
@@ -45,7 +45,7 @@ func (m *MessageAction) Execute(a *ActionInfo) bool {
 		}()
 
 		if err := m.chatgpt.StreamChat(*a.ctx, msg, chatResponseStream); err != nil {
-			err := updateFinalCard(*a.ctx, "聊天失败", cardId)
+			err := updateFinalCard(*a.ctx, "时间在我们手中溜走o(╥﹏╥)o让我们稍后重新开始", cardId)
 			if err != nil {
 				return
 			}
